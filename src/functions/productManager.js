@@ -49,10 +49,14 @@ export default class ProductManager{
         }        
 
     }
-    getProducts(){
+    getProducts(limit){
         //Get the all the products
         const data = JSON.parse(fs.readFileSync(this.path, 'utf-8'));
-        return data
+        if(!limit || limit > data.length){
+            return data
+        }
+
+        return data.slice(0,limit);
 
     }
     getProductsById(id){

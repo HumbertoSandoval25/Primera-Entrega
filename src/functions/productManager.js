@@ -8,10 +8,10 @@ export default class ProductManager{
     async addProduct(product){
         try {
             //Validate all the fileds
-            const fileds = ['title','description','code','price','stock','category'];
-            for(const filed of fileds){
-                if(!product.hasOwnProperty(filed)){
-                    throw new Error(`Couldn't found the filed: ${filed}`)
+            const fields = ['title','description','code','price','stock','category'];
+            for(const field of fields){
+                if(!product.hasOwnProperty(field)){
+                    throw new Error(`Couldn't found the filed: ${field}`)
                 }
             }
 
